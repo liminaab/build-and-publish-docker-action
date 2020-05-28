@@ -14,11 +14,11 @@ PASSWORD="$3"
 REGISTRY="$4"
 
 echo "current working directory is " $PWD
-cd ../../
-cd /action
+//cd ../../
 
 echo ${GITHUB_REPOSITORY}
 echo ${GITHUB_SECRET}
+ls
 
 # if [ -z "${IMPORT}" ]; then
 #   IMPORT="${GITHUB_REPOSITORY}"
