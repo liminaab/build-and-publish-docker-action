@@ -15,7 +15,6 @@ REGISTRY="$4"
 
 echo "current working directory2 is " $PWD
 REPO_ROOT_DIR="$PWD"
-ls
 #cd ../../
 #cd
 
@@ -41,14 +40,12 @@ echo "test"
 # mkdir -p "$(dirname "${WORKDIR}")"
 # ln -s "${PWD}" "${WORKDIR}"
 
-#echo "${PASSWORD}" | docker login -u ${USERNAME} --password-stdin ${REGISTRY}
+echo "${PASSWORD}" | docker login -u ${USERNAME} --password-stdin ${REGISTRY}
 
 for repo in ${REPOS}; do
     echo "Running $repo"
-    echo ${REPO_ROOT_DIR}
-    echo ${PWD}
     cd "${REPO_ROOT_DIR}"
     cd "${repo}"
-    ls
-    
+    docker build -t "${repo}:1" .
+    docker push "${repo}"
 done
