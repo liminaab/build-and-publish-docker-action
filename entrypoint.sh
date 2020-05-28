@@ -44,7 +44,7 @@ echo "test"
 
 for repo in ${REPOS}; do
     echo "Running $repo"
-    cd
+    cd $PWD
     cd "${repo}"
     ls
     
