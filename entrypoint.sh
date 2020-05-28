@@ -13,7 +13,7 @@ USERNAME="$2"
 PASSWORD="$3"
 REGISTRY="$4"
 
-echo "current working directory is " $PWD
+echo "current working directory2 is " $PWD
 ls
 #cd ../../
 #cd
