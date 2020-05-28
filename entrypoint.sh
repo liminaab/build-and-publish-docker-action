@@ -15,6 +15,7 @@ REGISTRY="$4"
 
 echo "current working directory is " $PWD
 #cd ../../
+cd
 
 echo ${GITHUB_REPOSITORY}
 echo ${GITHUB_SECRET}
@@ -40,6 +41,6 @@ echo "${PASSWORD}" | docker login -u ${USERNAME} --password-stdin ${REGISTRY}
 
 for repo in ${REPOS}; do
     echo "Running $repo"
-    cd "${repo}"
+    #cd "${repo}"
     
 done
