@@ -1,0 +1,26 @@
+name: 'build_and_publish_action'
+description: 'build_and_publish_action'
+inputs:
+  repositories: 
+    description: 'Projects to execute on'
+    required: true
+  username: 
+    description: 'Username'
+    required: true
+  password: 
+    description: 'Password'
+    required: true
+  registry: 
+    description: 'Registry'
+    required: true
+outputs:
+  status:
+    description: 'Status of execution'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.repositories }}
+    - ${{ inputs.username }}
+    - ${{ inputs.password }}
+    - ${{ inputs.registry }}
