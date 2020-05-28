@@ -40,12 +40,13 @@ echo "test"
 # mkdir -p "$(dirname "${WORKDIR}")"
 # ln -s "${PWD}" "${WORKDIR}"
 
-echo "${PASSWORD}" | docker login -u ${USERNAME} --password-stdin ${REGISTRY}
+echo "${PASSWORD}" | docker login ${REGISTRY} -u ${USERNAME} --password-stdin
 
 for repo in ${REPOS}; do
     echo "Running $repo"
     cd "${REPO_ROOT_DIR}"
     cd "${repo}"
-    docker build -t "${repo}:1" .
-    docker push "${repo}"
+    docker build -t "docker.pkg.github.com/liminaab/monorepo/${repo}:1" .
+
+    docker push "docker.pkg.github.com/liminaab/monorepo/${repo}:1"
 done
