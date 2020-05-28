@@ -41,6 +41,8 @@ echo "${PASSWORD}" | docker login -u ${USERNAME} --password-stdin ${REGISTRY}
 
 for repo in ${REPOS}; do
     echo "Running $repo"
-    #cd "${repo}"
+    cd
+    cd "${repo}"
+    ls
     
 done
