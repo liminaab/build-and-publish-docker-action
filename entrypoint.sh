@@ -14,12 +14,15 @@ PASSWORD="$3"
 REGISTRY="$4"
 
 echo "current working directory is " $PWD
+ls
 #cd ../../
 cd
 
 echo ${GITHUB_REPOSITORY}
 echo ${GITHUB_SECRET}
 ls
+
+
 
 # if [ -z "${IMPORT}" ]; then
 #   IMPORT="${GITHUB_REPOSITORY}"
@@ -37,12 +40,12 @@ ls
 # mkdir -p "$(dirname "${WORKDIR}")"
 # ln -s "${PWD}" "${WORKDIR}"
 
-echo "${PASSWORD}" | docker login -u ${USERNAME} --password-stdin ${REGISTRY}
+#echo "${PASSWORD}" | docker login -u ${USERNAME} --password-stdin ${REGISTRY}
 
 for repo in ${REPOS}; do
     echo "Running $repo"
-    cd
-    cd "${repo}"
-    ls
+    #cd
+    #cd "${repo}"
+    #ls
     
 done
