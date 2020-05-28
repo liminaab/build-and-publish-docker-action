@@ -14,6 +14,7 @@ PASSWORD="$3"
 REGISTRY="$4"
 
 echo "current working directory2 is " $PWD
+REPO_ROOT_DIR="$PWD"
 ls
 #cd ../../
 #cd
@@ -44,8 +45,8 @@ echo "test"
 
 for repo in ${REPOS}; do
     echo "Running $repo"
-    #cd "~${PWD}"
-    cd "../${repo}"
+    cd "~${REPO_ROOT_DIR}"
+    cd "${repo}"
     ls
     
 done
