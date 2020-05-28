@@ -14,7 +14,7 @@ PASSWORD="$3"
 REGISTRY="$4"
 
 echo "current working directory is " $PWD
-//cd ../../
+#cd ../../
 
 echo ${GITHUB_REPOSITORY}
 echo ${GITHUB_SECRET}
