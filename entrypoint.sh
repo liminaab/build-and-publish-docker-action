@@ -45,6 +45,8 @@ echo "test"
 
 for repo in ${REPOS}; do
     echo "Running $repo"
+    echo ${REPO_ROOT_DIR}
+    echo ${PWD}
     cd "~${REPO_ROOT_DIR}"
     cd "${repo}"
     ls
