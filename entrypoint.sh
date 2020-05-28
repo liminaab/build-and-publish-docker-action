@@ -16,11 +16,11 @@ REGISTRY="$4"
 echo "current working directory is " $PWD
 ls
 #cd ../../
-cd
+#cd
 
 echo ${GITHUB_REPOSITORY}
 echo ${GITHUB_SECRET}
-ls
+echo "test"
 
 
 
