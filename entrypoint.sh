@@ -18,11 +18,11 @@ REPO_ROOT_DIR="$PWD"
 #cd ../../
 #cd
 
-echo ${GITHUB_REPOSITORY}
-echo ${GITHUB_SECRET}
-echo "test"
+ls
 
-
+cd ../
+ls
+cd ../..
 
 # if [ -z "${IMPORT}" ]; then
 #   IMPORT="${GITHUB_REPOSITORY}"
@@ -46,7 +46,7 @@ for repo in ${REPOS}; do
     echo "Running $repo"
     cd "${REPO_ROOT_DIR}"
     cd "${repo}"
-    docker build -t "docker.pkg.github.com/liminaab/monorepo/${repo/services\//}:1" .
+    #docker build -t "docker.pkg.github.com/liminaab/monorepo/${repo/apps\//}:1" .
 
-    docker push "docker.pkg.github.com/liminaab/monorepo/${repo/services\//}:1"
+    #docker push "docker.pkg.github.com/liminaab/monorepo/${repo/apps\//}:1"
 done
