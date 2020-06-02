@@ -42,7 +42,7 @@ for repo in ${REPOS}; do
     echo "Running $repo"
     cd "${REPO_ROOT_DIR}"
     cd "${repo}"
-    cp "${REPO_ROOT_DIR}/libs/captron_java_lib" .
+    cp "${REPO_ROOT_DIR}/libs/captron_java_lib" . -r
     docker build -t "docker.pkg.github.com/liminaab/monorepo/${repo/apps\//}:2" .
 
     docker push "docker.pkg.github.com/liminaab/monorepo/${repo/apps\//}:2"
