@@ -20,8 +20,8 @@ for repo in ${REPOS}; do
     # Do not do this for GO
     cp "${REPO_ROOT_DIR}/libs/captron_java_lib" . -r
 
-    #TAG=$(echo $GITHUB_SHA | head -c7)
-    #echo "${TAG} test"
+    TAG=$(echo $GITHUB_SHA | head -c7)
+    echo "${TAG} test"
 
     # Change path
     docker build -t "${REGISTRY}/liminaab/monorepo/${repo/apps\//}:3" .
