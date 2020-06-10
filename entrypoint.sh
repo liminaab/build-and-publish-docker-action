@@ -21,6 +21,8 @@ for repo in ${REPOS}; do
     cp "${REPO_ROOT_DIR}/libs/captron_java_lib" . -r
 
     TAG="${GITHUB_REF##*/}-$(echo ${GITHUB_SHA} | cut -c1-8)"
+    echo "${GITHUB_REF}"
+    echo "${GITHUB_SHA}"
 
     # Change path
     docker build -t "${REGISTRY}/liminaab/monorepo/${repo/apps\//}:${TAG}" .
