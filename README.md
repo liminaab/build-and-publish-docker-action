@@ -1,1 +1,1 @@
-# build_and_publish_action
+# Build and publish docker action

@@ -1,5 +1,5 @@
-name: 'build_and_publish_action'
-description: 'build_and_publish_action'
+name: 'Build and publish docker action'
+description: 'Build and publish docker action'
 inputs:
   repositories: 
     description: 'Projects to execute on'
