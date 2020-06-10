@@ -6,6 +6,7 @@ REPOS="$1"
 USERNAME="$2"
 PASSWORD="$3"
 REGISTRY="$4"
+TAG="$5"
 
 echo "current working directory is " $PWD
 REPO_ROOT_DIR="$PWD"
@@ -19,10 +20,6 @@ for repo in ${REPOS}; do
     cd "${repo}"
     # Do not do this for GO
     cp "${REPO_ROOT_DIR}/libs/captron_java_lib" . -r
-
-    TAG="${GITHUB_REF##*/}-$(echo ${GITHUB_SHA} | cut -c1-8)"
-    echo "${GITHUB_REF}"
-    echo "${GITHUB_SHA}"
 
     # Change path
     docker build -t "${REGISTRY}/liminaab/monorepo/${repo/apps\//}:${TAG}" .

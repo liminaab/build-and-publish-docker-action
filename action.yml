@@ -13,6 +13,9 @@ inputs:
   registry: 
     description: 'Registry'
     required: true
+  tag: 
+    description: 'Docker image tag'
+    required: true
 outputs:
   status:
     description: 'Status of execution'
@@ -24,3 +27,4 @@ runs:
     - ${{ inputs.username }}
     - ${{ inputs.password }}
     - ${{ inputs.registry }}
+    - ${{ inputs.tag }}
